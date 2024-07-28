@@ -1,3 +1,4 @@
+import barba from "@barba/core";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -70,4 +71,65 @@ document.addEventListener("DOMContentLoaded", () => {
       animation.play();
     }
   });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const transitionDuration = 1;
+  const transitionEasing = "power1.inOut";
+
+  const initBarba = () => {
+    const mainContent = document.querySelector('main[data-barba="container"]');
+    if (mainContent) {
+      // Initialize Barba
+      barba.init({
+        transitions: [
+          {
+            name: "height-transition",
+            leave(data) {
+              const done = this.async();
+
+              // Animate the opacity of the current container
+              gsap.to(data.current.container, {
+                opacity: 0,
+                duration: transitionDuration,
+                ease: transitionEasing,
+                onComplete: () => {
+                  // Collapse the height immediately after the opacity transition
+                  gsap.set(data.current.container, {
+                    height: 0,
+                    marginTop: 0,
+                  });
+                  done();
+                },
+              });
+            },
+            enter(data) {
+              const done = this.async();
+
+              // Ensure the incoming container has no height initially
+              gsap.set(data.next.container, {
+                // height: 0,
+                opacity: 0,
+              });
+
+              // Expand the height of the incoming container and animate its opacity
+              gsap.to(data.next.container, {
+                // height: "auto",
+                opacity: 1,
+                duration: transitionDuration,
+                ease: transitionEasing,
+                onComplete: done,
+              });
+            },
+          },
+        ],
+        debug: true, // Enable debugging to identify issues
+      });
+    } else {
+      console.warn("Barba.js: No main content found, retrying...");
+      setTimeout(initBarba, 100);
+    }
+  };
+
+  initBarba();
 });

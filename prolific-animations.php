@@ -45,3 +45,22 @@ function prolific_animations_enqueue_frontend() {
 		filemtime(plugin_dir_path(__FILE__) . 'build/animations/view.js')
 	);
 }
+
+
+function pa_body_open() {
+	echo '<div id="barba-wrapper" data-barba="wrapper">';
+}
+add_action('wp_body_open', 'pa_body_open');
+
+function pa_footer_close_wrapper() {
+	echo '</div><!-- #barba-wrapper -->';
+}
+add_action('wp_footer', 'pa_footer_close_wrapper', 1);
+
+function add_barba_attribute_to_main_block($block_content, $block) {
+	if ($block['blockName'] === 'core/group' && strpos($block_content, '<main') !== false) {
+		$block_content = str_replace('<main', '<main data-barba="container"', $block_content);
+	}
+	return $block_content;
+}
+add_filter('render_block', 'add_barba_attribute_to_main_block', 10, 2);
