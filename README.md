@@ -2,6 +2,9 @@
 
 Prolific Animations is a game-changer for WordPress sites, empowering site creators, maintainers, designers, and content authors to effortlessly add captivating animations to any block or section. Designed for modern WordPress themes that leverage the block editor, this plugin transforms static content into dynamic, engaging experiences that captivate and retain visitors. Whether you're looking to enhance user interaction, emphasize important content, or simply add visual flair, Prolific Animations provides the tools you need to create stunning animations with ease.
 
+Looking for more documentation?
+[View Prolific Animations Support Documentation](https://prolificdigital.notion.site/Prolific-Animations-Support-Documentation-for-WordPress-138f73948280458d9a2bcd298ac62354)
+
 ![Animation Demo](./assets/screenshots/demo.gif)
 
 ## Features
