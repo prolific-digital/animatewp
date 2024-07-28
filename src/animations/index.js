@@ -476,38 +476,38 @@ const AnimatedIcon = () => (
   </svg>
 );
 
+const resetAttributes = (setAttributes) => {
+  setAttributes({
+    enableAnimation: false,
+    enableScrollTrigger: false,
+    animateLoop: false,
+    animateAutoPlay: false,
+    animateDuration: 1,
+    animateDelay: 0,
+    animateEasing: "power1.inOut",
+    animateX: 0,
+    animateY: 0,
+    animateXPercent: 0,
+    animateYPercent: 0,
+    animateScale: 1,
+    animateRotation: 0,
+    animateSkew: 0,
+    animateAutoAlpha: 1,
+    animateRepeat: 0,
+    animateYoYo: false,
+    scrollTriggerStart: "top bottom",
+    scrollTriggerEnd: "bottom top",
+    scrollTriggerToggleActions: "play none none none",
+    scrollTriggerStartOffset: 0,
+  });
+};
+
 const withToolbarButton = createHigherOrderComponent((BlockEdit) => {
   return (props) => {
     const { attributes, setAttributes, isSelected } = props;
 
-    const resetAttributes = () => {
-      setAttributes({
-        enableAnimation: false,
-        enableScrollTrigger: false,
-        animateLoop: false,
-        animateAutoPlay: false,
-        animateDuration: 1,
-        animateDelay: 0,
-        animateEasing: "power1.inOut",
-        animateX: 0,
-        animateY: 0,
-        animateXPercent: 0,
-        animateYPercent: 0,
-        animateScale: 1,
-        animateRotation: 0,
-        animateSkew: 0,
-        animateAutoAlpha: 1,
-        animateRepeat: 0,
-        animateYoYo: false,
-        scrollTriggerStart: "top bottom",
-        scrollTriggerEnd: "bottom top",
-        scrollTriggerToggleActions: "play none none none",
-        scrollTriggerStartOffset: 0,
-      });
-    };
-
     const applyPreset = (preset) => {
-      resetAttributes();
+      resetAttributes(setAttributes);
 
       switch (preset) {
         case "Fade In":
@@ -533,7 +533,163 @@ const withToolbarButton = createHigherOrderComponent((BlockEdit) => {
             animateAutoAlpha: 0,
           });
           break;
-        // Add more presets as needed
+        case "Fade Down":
+          setAttributes({
+            enableAnimation: true,
+            enableScrollTrigger: true,
+            scrollTriggerStart: "top bottom",
+            animateDuration: 1,
+            animateDelay: 0,
+            animateEasing: "power2.inOut",
+            animateY: -100,
+            animateAutoAlpha: 0,
+          });
+          break;
+        case "Fade Left":
+          setAttributes({
+            enableAnimation: true,
+            enableScrollTrigger: true,
+            scrollTriggerStart: "top bottom",
+            animateDuration: 1,
+            animateDelay: 0,
+            animateEasing: "power2.inOut",
+            animateX: 100,
+            animateAutoAlpha: 0,
+          });
+          break;
+        case "Fade Right":
+          setAttributes({
+            enableAnimation: true,
+            enableScrollTrigger: true,
+            scrollTriggerStart: "top bottom",
+            animateDuration: 1,
+            animateDelay: 0,
+            animateEasing: "power2.inOut",
+            animateX: -100,
+            animateAutoAlpha: 0,
+          });
+          break;
+        case "Bounce":
+          setAttributes({
+            enableAnimation: true,
+            enableScrollTrigger: true,
+            scrollTriggerStart: "top bottom",
+            animateDuration: 0.6,
+            animateDelay: 0,
+            animateEasing: "bounce",
+            animateY: 30,
+            animateRepeat: -1,
+            animateYoYo: true,
+          });
+          break;
+        case "Zoom In":
+          setAttributes({
+            enableAnimation: true,
+            enableScrollTrigger: true,
+            scrollTriggerStart: "top bottom",
+            animateDuration: 1,
+            animateDelay: 0,
+            animateEasing: "power1.inOut",
+            animateScale: 0,
+          });
+          break;
+        case "Zoom Out":
+          setAttributes({
+            enableAnimation: true,
+            enableScrollTrigger: true,
+            scrollTriggerStart: "top bottom",
+            animateDuration: 1,
+            animateDelay: 0,
+            animateEasing: "power1.inOut",
+            animateScale: 1.5,
+          });
+          break;
+        case "Rotate":
+          setAttributes({
+            enableAnimation: true,
+            enableScrollTrigger: true,
+            scrollTriggerStart: "top bottom",
+            animateDuration: 1,
+            animateDelay: 0,
+            animateEasing: "power1.inOut",
+            animateRotation: 360,
+          });
+          break;
+        case "Slide In Left":
+          setAttributes({
+            enableAnimation: true,
+            enableScrollTrigger: true,
+            scrollTriggerStart: "top bottom",
+            animateDuration: 1,
+            animateDelay: 0,
+            animateEasing: "power1.inOut",
+            animateX: -100,
+            animateAutoAlpha: 0,
+          });
+          break;
+        case "Slide In Right":
+          setAttributes({
+            enableAnimation: true,
+            enableScrollTrigger: true,
+            scrollTriggerStart: "top bottom",
+            animateDuration: 1,
+            animateDelay: 0,
+            animateEasing: "power1.inOut",
+            animateX: 100,
+            animateAutoAlpha: 0,
+          });
+          break;
+        case "Flip":
+          setAttributes({
+            enableAnimation: true,
+            enableScrollTrigger: true,
+            scrollTriggerStart: "top bottom",
+            animateDuration: 1,
+            animateDelay: 0,
+            animateEasing: "power1.inOut",
+            animateRotation: 180,
+          });
+          break;
+        case "Pulse":
+          setAttributes({
+            enableAnimation: true,
+            enableScrollTrigger: true,
+            scrollTriggerStart: "top bottom",
+            animateDuration: 0.5,
+            animateDelay: 0,
+            animateEasing: "power1.inOut",
+            animateScale: 1.2,
+            animateRepeat: -1,
+            animateYoYo: true,
+          });
+          break;
+        case "Swing":
+          setAttributes({
+            enableAnimation: true,
+            enableScrollTrigger: true,
+            scrollTriggerStart: "top bottom",
+            animateDuration: 1,
+            animateDelay: 0,
+            animateEasing: "elastic",
+            animateRotation: 15,
+            animateRepeat: -1,
+            animateYoYo: true,
+          });
+          break;
+        case "Wobble":
+          setAttributes({
+            enableAnimation: true,
+            enableScrollTrigger: true,
+            scrollTriggerStart: "top bottom",
+            animateDuration: 1,
+            animateDelay: 0,
+            animateEasing: "elastic",
+            animateX: 10,
+            animateRotation: 5,
+            animateRepeat: -1,
+            animateYoYo: true,
+          });
+          break;
         default:
           break;
       }
@@ -550,14 +706,86 @@ const withToolbarButton = createHigherOrderComponent((BlockEdit) => {
                 label={__("Animation Presets", "block-settings-enhancer")}
                 controls={[
                   {
+                    title: "None",
+                    icon: <AnimatedIcon />,
+                    onClick: () => resetAttributes(setAttributes),
+                  },
+                  {
                     title: "Fade In",
+                    icon: <AnimatedIcon />,
                     onClick: () => applyPreset("Fade In"),
                   },
                   {
                     title: "Fade Up",
+                    icon: <AnimatedIcon />,
                     onClick: () => applyPreset("Fade Up"),
                   },
-                  // Add more preset controls here
+                  {
+                    title: "Fade Down",
+                    icon: <AnimatedIcon />,
+                    onClick: () => applyPreset("Fade Down"),
+                  },
+                  {
+                    title: "Fade Left",
+                    icon: <AnimatedIcon />,
+                    onClick: () => applyPreset("Fade Left"),
+                  },
+                  {
+                    title: "Fade Right",
+                    icon: <AnimatedIcon />,
+                    onClick: () => applyPreset("Fade Right"),
+                  },
+                  {
+                    title: "Bounce",
+                    icon: <AnimatedIcon />,
+                    onClick: () => applyPreset("Bounce"),
+                  },
+                  {
+                    title: "Zoom In",
+                    icon: <AnimatedIcon />,
+                    onClick: () => applyPreset("Zoom In"),
+                  },
+                  {
+                    title: "Zoom Out",
+                    icon: <AnimatedIcon />,
+                    onClick: () => applyPreset("Zoom Out"),
+                  },
+                  {
+                    title: "Rotate",
+                    icon: <AnimatedIcon />,
+                    onClick: () => applyPreset("Rotate"),
+                  },
+                  {
+                    title: "Slide In Left",
+                    icon: <AnimatedIcon />,
+                    onClick: () => applyPreset("Slide In Left"),
+                  },
+                  {
+                    title: "Slide In Right",
+                    icon: <AnimatedIcon />,
+                    onClick: () => applyPreset("Slide In Right"),
+                  },
+                  {
+                    title: "Flip",
+                    icon: <AnimatedIcon />,
+                    onClick: () => applyPreset("Flip"),
+                  },
+                  {
+                    title: "Pulse",
+                    icon: <AnimatedIcon />,
+                    onClick: () => applyPreset("Pulse"),
+                  },
+                  {
+                    title: "Swing",
+                    icon: <AnimatedIcon />,
+                    onClick: () => applyPreset("Swing"),
+                  },
+                  {
+                    title: "Wobble",
+                    icon: <AnimatedIcon />,
+                    onClick: () => applyPreset("Wobble"),
+                  },
+                  // Add more preset controls here if needed
                 ]}
               />
             </Toolbar>
