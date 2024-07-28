@@ -1,22 +1,10 @@
-=== Prolific Animations ===
-Contributors: millertchris
-Donate link: https://prolificdigital.com
-Tags: animations, block editor, wordpress, plugin, custom animations, scroll trigger
-Requires at least: 6.0
-Tested up to: 6.6.1
-Stable tag: 1.0
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+# Prolific Animations
 
-Prolific Animations is a game-changer for WordPress sites, empowering site creators, maintainers, designers, and content authors to effortlessly add captivating animations to any block or section.
-
-== Description ==
-
-Prolific Animations transforms static content into dynamic, engaging experiences that captivate and retain visitors. Whether you're looking to enhance user interaction, emphasize important content, or simply add visual flair, Prolific Animations provides the tools you need to create stunning animations with ease.
+Prolific Animations is a game-changer for WordPress sites, empowering site creators, maintainers, designers, and content authors to effortlessly add captivating animations to any block or section. Designed for modern WordPress themes that leverage the block editor, this plugin transforms static content into dynamic, engaging experiences that captivate and retain visitors. Whether you're looking to enhance user interaction, emphasize important content, or simply add visual flair, Prolific Animations provides the tools you need to create stunning animations with ease.
 
 ![Animation Demo](./assets/screenshots/demo.gif)
 
-### Features
+## Features
 
 - **Compatibility**: Works seamlessly with core blocks, third-party blocks, and custom blocks.
 - **Advanced Controls**: Full access to detailed animation settings for precise customization.
@@ -24,12 +12,12 @@ Prolific Animations transforms static content into dynamic, engaging experiences
 - **Customizable**: Tailor presets or create custom animations to fit your unique needs.
 - **Triggers**: Control exactly when animations occur, including scroll triggers.
 
-== Installation ==
+## Installation
 
 1. Upload the plugin files to the `/wp-content/plugins/prolific-animations` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress.
 
-== Usage ==
+## Usage
 
 Once the Prolific Animations plugin is activated, you'll find new animation options available for every block within the block editor.
 
@@ -98,21 +86,12 @@ To create a "Fade In from Left" animation:
 
 This setup will make the block start 100 pixels to the left of its natural position and fade in while moving to its final position over the course of 1 second.
 
+## Support
+
+For further assistance, contact [support@prolificdigital.com](mailto:support@prolificdigital.com).
+
+---
+
 Prolific Animations is a powerful tool that brings your WordPress site to life with engaging and customizable animations. Whether you're looking to enhance user interaction or add visual flair to your content, Prolific Animations provides the flexibility and control you need.
 
 Happy animating!
-
-== Screenshots ==
-
-1. ![Animation Demo](./assets/screenshots/demo.gif)
-2. ![Animation Settings](./assets/screenshots/example.png)
-
-== Changelog ==
-
-= 1.0 =
-
-- Initial release.
-
-== Support ==
-
-For further assistance, contact [support@prolificdigital.com](mailto:support@prolificdigital.com).
