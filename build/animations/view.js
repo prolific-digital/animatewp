@@ -9659,7 +9659,7 @@ __webpack_require__.r(__webpack_exports__);
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".has-animation").forEach(element => {
-    var _parseFloat;
+    var _parseFloat, _parseFloat2;
     const duration = parseFloat(element.getAttribute("data-animation-duration")) || 1;
     const delay = parseFloat(element.getAttribute("data-animation-delay")) || 0;
     const ease = element.getAttribute("data-animation-ease") || "power1.inOut";
@@ -9669,15 +9669,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const y = parseFloat(element.getAttribute("data-animation-y")) || 0;
     const xPercent = parseFloat(element.getAttribute("data-animation-x-percent")) || 0;
     const yPercent = parseFloat(element.getAttribute("data-animation-y-percent")) || 0;
-    const scale = parseFloat(element.getAttribute("data-animation-scale")) || 1;
-    const scaleX = parseFloat(element.getAttribute("data-animation-scale-x")) || 1;
-    const scaleY = parseFloat(element.getAttribute("data-animation-scale-y")) || 1;
+    const scale = (_parseFloat = parseFloat(element.getAttribute("data-animation-scale"))) !== null && _parseFloat !== void 0 ? _parseFloat : 1;
     const rotation = parseFloat(element.getAttribute("data-animation-rotation")) || 0;
-    const skew = parseFloat(element.getAttribute("data-animation-skew")) || 0;
-    const skewX = parseFloat(element.getAttribute("data-animation-skew-x")) || 0;
-    const skewY = parseFloat(element.getAttribute("data-animation-skew-y")) || 0;
-    const opacity = parseFloat(element.getAttribute("data-animation-opacity")) || 1;
-    const autoAlpha = (_parseFloat = parseFloat(element.getAttribute("data-animation-auto-alpha"))) !== null && _parseFloat !== void 0 ? _parseFloat : 1;
+    const autoAlpha = (_parseFloat2 = parseFloat(element.getAttribute("data-animation-auto-alpha"))) !== null && _parseFloat2 !== void 0 ? _parseFloat2 : 1;
     const repeat = parseInt(element.getAttribute("data-animation-repeat"), 10) || 0;
     const yoYo = element.getAttribute("data-animation-yoyo") === "true";
     const enableScrollTrigger = element.getAttribute("data-scroll-trigger") === "true";
@@ -9694,19 +9688,12 @@ document.addEventListener("DOMContentLoaded", () => {
       xPercent: xPercent,
       yPercent: yPercent,
       scale: scale,
-      // scaleX: scaleX,
-      // scaleY: scaleY,
       rotation: rotation,
-      // skew: skew,
-      // skewX: skewX,
-      // skewY: skewY,
-      // opacity: opacity,
       autoAlpha: autoAlpha,
       repeat: repeat,
       yoyo: yoYo,
       paused: !autoPlay
     };
-    console.log(autoAlpha);
     if (enableScrollTrigger) {
       animationConfig.scrollTrigger = {
         trigger: element,

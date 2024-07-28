@@ -2032,9 +2032,7 @@ const withToolbarButton = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_3__.cre
             animateDuration: 0.6,
             animateDelay: 0,
             animateEasing: "bounce",
-            animateY: 30,
-            animateRepeat: -1,
-            animateYoYo: true
+            animateY: -60
           });
           break;
         case "Zoom In":
@@ -2056,7 +2054,7 @@ const withToolbarButton = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_3__.cre
             animateDuration: 1,
             animateDelay: 0,
             animateEasing: "power1.inOut",
-            animateScale: 1.5
+            animateScale: 100
           });
           break;
         case "Rotate":
@@ -2070,30 +2068,6 @@ const withToolbarButton = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_3__.cre
             animateRotation: 360
           });
           break;
-        case "Slide In Left":
-          setAttributes({
-            enableAnimation: true,
-            enableScrollTrigger: true,
-            scrollTriggerStart: "top bottom",
-            animateDuration: 1,
-            animateDelay: 0,
-            animateEasing: "power1.inOut",
-            animateX: -100,
-            animateAutoAlpha: 0
-          });
-          break;
-        case "Slide In Right":
-          setAttributes({
-            enableAnimation: true,
-            enableScrollTrigger: true,
-            scrollTriggerStart: "top bottom",
-            animateDuration: 1,
-            animateDelay: 0,
-            animateEasing: "power1.inOut",
-            animateX: 100,
-            animateAutoAlpha: 0
-          });
-          break;
         case "Flip":
           setAttributes({
             enableAnimation: true,
@@ -2103,6 +2077,19 @@ const withToolbarButton = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_3__.cre
             animateDelay: 0,
             animateEasing: "power1.inOut",
             animateRotation: 180
+          });
+          break;
+        case "Shake":
+          setAttributes({
+            enableAnimation: true,
+            enableScrollTrigger: true,
+            scrollTriggerStart: "top bottom",
+            animateDuration: 1,
+            animateDelay: 0,
+            animateY: 100,
+            animateEasing: "elastic",
+            animateRepeat: -1,
+            animateYoYo: true
           });
           break;
         case "Pulse":
@@ -2118,19 +2105,6 @@ const withToolbarButton = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_3__.cre
             animateYoYo: true
           });
           break;
-        case "Swing":
-          setAttributes({
-            enableAnimation: true,
-            enableScrollTrigger: true,
-            scrollTriggerStart: "top bottom",
-            animateDuration: 1,
-            animateDelay: 0,
-            animateEasing: "elastic",
-            animateRotation: 15,
-            animateRepeat: -1,
-            animateYoYo: true
-          });
-          break;
         case "Wobble":
           setAttributes({
             enableAnimation: true,
@@ -2139,8 +2113,7 @@ const withToolbarButton = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_3__.cre
             animateDuration: 1,
             animateDelay: 0,
             animateEasing: "elastic",
-            animateX: 10,
-            animateRotation: 5,
+            animateRotation: 15,
             animateRepeat: -1,
             animateYoYo: true
           });
@@ -2195,25 +2168,17 @@ const withToolbarButton = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_3__.cre
         icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(AnimatedIcon, null),
         onClick: () => applyPreset("Rotate")
       }, {
-        title: "Slide In Left",
-        icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(AnimatedIcon, null),
-        onClick: () => applyPreset("Slide In Left")
-      }, {
-        title: "Slide In Right",
-        icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(AnimatedIcon, null),
-        onClick: () => applyPreset("Slide In Right")
-      }, {
         title: "Flip",
         icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(AnimatedIcon, null),
         onClick: () => applyPreset("Flip")
       }, {
+        title: "Shake",
+        icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(AnimatedIcon, null),
+        onClick: () => applyPreset("Shake")
+      }, {
         title: "Pulse",
         icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(AnimatedIcon, null),
         onClick: () => applyPreset("Pulse")
-      }, {
-        title: "Swing",
-        icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(AnimatedIcon, null),
-        onClick: () => applyPreset("Swing")
       }, {
         title: "Wobble",
         icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(AnimatedIcon, null),
