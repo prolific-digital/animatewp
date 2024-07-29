@@ -1,4 +1,4 @@
-=== Prolific Animations ===
+=== AnimateWP ===
 Contributors: millertchris
 Donate link: https://prolificdigital.com
 Tags: animations, block editor, wordpress, plugin, custom animations, scroll trigger
@@ -8,14 +8,14 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Prolific Animations is a game-changer for WordPress sites, empowering site creators, maintainers, designers, and content authors to effortlessly add captivating animations to any block or section.
+AnimateWP is a game-changer for WordPress sites, empowering site creators, maintainers, designers, and content authors to effortlessly add captivating animations to any block or section.
 
 == Description ==
 
-Prolific Animations transforms static content into dynamic, engaging experiences that captivate and retain visitors. Whether you're looking to enhance user interaction, emphasize important content, or simply add visual flair, Prolific Animations provides the tools you need to create stunning animations with ease.
+AnimateWP transforms static content into dynamic, engaging experiences that captivate and retain visitors. Whether you're looking to enhance user interaction, emphasize important content, or simply add visual flair, AnimateWP provides the tools you need to create stunning animations with ease.
 
 Looking for more documentation?
-[View Prolific Animations Support Documentation](https://prolificdigital.notion.site/Prolific-Animations-Support-Documentation-for-WordPress-138f73948280458d9a2bcd298ac62354)
+[View AnimateWP Support Documentation](https://prolificdigital.notion.site/AnimateWP-Documentation-138f73948280458d9a2bcd298ac62354)
 
 ![Animation Demo](./assets/screenshots/demo.gif)
 
@@ -29,12 +29,12 @@ Looking for more documentation?
 
 == Installation ==
 
-1. Upload the plugin files to the `/wp-content/plugins/prolific-animations` directory, or install the plugin through the WordPress plugins screen directly.
+1. Upload the plugin files to the `/wp-content/plugins/animatewp` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress.
 
 == Usage ==
 
-Once the Prolific Animations plugin is activated, you'll find new animation options available for every block within the block editor.
+Once the AnimateWP plugin is activated, you'll find new animation options available for every block within the block editor.
 
 ### Adding an Animation
 
@@ -87,7 +87,7 @@ Customize your animations with the following options:
 
 ### Understanding Animation "From"
 
-The animations in Prolific Animations work by animating the block "from" a specified state to its final state. This means that you define where the animation starts, and the block transitions from that state to its natural position and appearance.
+The animations in AnimateWP work by animating the block "from" a specified state to its final state. This means that you define where the animation starts, and the block transitions from that state to its natural position and appearance.
 
 #### Example: Fade In from Left
 
@@ -101,7 +101,7 @@ To create a "Fade In from Left" animation:
 
 This setup will make the block start 100 pixels to the left of its natural position and fade in while moving to its final position over the course of 1 second.
 
-Prolific Animations is a powerful tool that brings your WordPress site to life with engaging and customizable animations. Whether you're looking to enhance user interaction or add visual flair to your content, Prolific Animations provides the flexibility and control you need.
+AnimateWP is a powerful tool that brings your WordPress site to life with engaging and customizable animations. Whether you're looking to enhance user interaction or add visual flair to your content, AnimateWP provides the flexibility and control you need.
 
 Happy animating!
 

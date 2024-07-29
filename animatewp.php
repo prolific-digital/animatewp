@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Plugin Name:       Prolific Animations
- * Description:       A plugin to add animations to all WordPress blocks.
+ * Plugin Name:       AnimateWP
+ * Description:       Add advanced animations to your WordPress site.
  * Requires at least: 6.1
  * Requires PHP:      7.4
- * Version:           0.1.0
+ * Version:           1.0.0
  * Author:            Prolific Digital
  * Author URI:        https://prolificdigital.com
  * GitHub Plugin URI: https://github.com/prolific-digital/prolific-animations

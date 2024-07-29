@@ -1,8 +1,8 @@
 {
-  "name": "prolific-animations",
+  "name": "animatewp",
   "version": "0.1.0",
-  "description": "Add animations to your site with ease.",
-  "author": "The WordPress Contributors",
+  "description": "Add advanced animations to your WordPress site.",
+  "author": "Prolific Digital",
   "license": "GPL-2.0-or-later",
   "main": "build/index.js",
   "scripts": {
@@ -19,8 +19,6 @@
   },
   "dependencies": {
     "@wordpress/icons": "^10.4.0",
-    "gsap": "^3.12.5",
-    "react-swiper": "^0.1.5",
-    "swiper": "^11.1.7"
+    "gsap": "^3.12.5"
   }
 }
