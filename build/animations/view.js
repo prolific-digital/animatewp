@@ -9745,6 +9745,8 @@ const initAnimations = () => {
 document.addEventListener("DOMContentLoaded", () => {
   initAnimations();
 });
+
+// Currently working on a way to get css, js, and seo information from the following page
 document.addEventListener("DOMContentLoaded", function () {
   const transitionDuration = 1;
   const transitionEasing = "power1.inOut";
