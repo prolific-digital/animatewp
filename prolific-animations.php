@@ -47,6 +47,10 @@ function prolific_animations_enqueue_frontend() {
 }
 
 
+
+
+
+
 function pa_body_open() {
 	echo '<div id="barba-wrapper" data-barba="wrapper">';
 }
@@ -55,7 +59,12 @@ add_action('wp_body_open', 'pa_body_open');
 function pa_footer_close_wrapper() {
 	echo '</div><!-- #barba-wrapper -->';
 }
+
 add_action('wp_footer', 'pa_footer_close_wrapper', 1);
+
+
+
+
 
 function add_barba_attribute_to_main_block($block_content, $block) {
 	if ($block['blockName'] === 'core/group' && strpos($block_content, '<main') !== false) {

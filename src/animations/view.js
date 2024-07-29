@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-document.addEventListener("DOMContentLoaded", () => {
+const initAnimations = () => {
   document.querySelectorAll(".has-animation").forEach((element) => {
     const duration =
       parseFloat(element.getAttribute("data-animation-duration")) || 1;
@@ -71,11 +71,31 @@ document.addEventListener("DOMContentLoaded", () => {
       animation.play();
     }
   });
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  initAnimations();
 });
 
 document.addEventListener("DOMContentLoaded", function () {
   const transitionDuration = 1;
   const transitionEasing = "power1.inOut";
+
+  const disableLinkClicks = () => {
+    document.querySelectorAll("a").forEach((link) => {
+      link.style.pointerEvents = "none";
+    });
+  };
+
+  const enableLinkClicks = () => {
+    document.querySelectorAll("a").forEach((link) => {
+      link.style.pointerEvents = "";
+    });
+  };
+
+  const initAnimations = () => {
+    // Your animation initialization code here
+  };
 
   const initBarba = () => {
     const mainContent = document.querySelector('main[data-barba="container"]');
@@ -87,6 +107,8 @@ document.addEventListener("DOMContentLoaded", function () {
             name: "height-transition",
             leave(data) {
               const done = this.async();
+
+              disableLinkClicks();
 
               // Animate the opacity of the current container
               gsap.to(data.current.container, {
@@ -108,17 +130,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
               // Ensure the incoming container has no height initially
               gsap.set(data.next.container, {
-                // height: 0,
                 opacity: 0,
               });
 
               // Expand the height of the incoming container and animate its opacity
               gsap.to(data.next.container, {
-                // height: "auto",
                 opacity: 1,
                 duration: transitionDuration,
                 ease: transitionEasing,
-                onComplete: done,
+                onComplete: () => {
+                  enableLinkClicks();
+                  initAnimations();
+                  done();
+                },
               });
             },
           },
