@@ -28,6 +28,11 @@ function addAttributes(settings) {
     settings.attributes = {};
   }
 
+  // Skip adding custom attributes for specific blocks (like Gravity Forms) in the block editor
+  if (settings.name === "gravityforms/form") {
+    return settings;
+  }
+
   // Loop through each attribute in blockAttributes and add it if it doesn't exist
   Object.keys(blockAttributes.attributes).forEach((attribute) => {
     if (!settings.attributes.hasOwnProperty(attribute)) {
@@ -47,7 +52,12 @@ addFilter(
 // Create HOC to add the new settings tab
 const withInspectorControl = createHigherOrderComponent((BlockEdit) => {
   return (props) => {
-    const { attributes, setAttributes, isSelected } = props;
+    const { attributes, setAttributes, isSelected, name } = props;
+
+    // Skip adding custom controls for Gravity Forms block
+    if (name === "gravityforms/form") {
+      return <BlockEdit {...props} />;
+    }
 
     const {
       enableAnimation,
@@ -504,7 +514,12 @@ const resetAttributes = (setAttributes) => {
 
 const withToolbarButton = createHigherOrderComponent((BlockEdit) => {
   return (props) => {
-    const { attributes, setAttributes, isSelected } = props;
+    const { attributes, setAttributes, isSelected, name } = props;
+
+    // Skip adding custom controls for Gravity Forms block
+    if (name === "gravityforms/form") {
+      return <BlockEdit {...props} />;
+    }
 
     const applyPreset = (preset) => {
       resetAttributes(setAttributes);
