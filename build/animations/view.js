@@ -9748,18 +9748,27 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", function () {
   const transitionDuration = 1;
   const transitionEasing = "power1.inOut";
-  const disableLinkClicks = () => {
-    document.querySelectorAll("a").forEach(link => {
-      link.style.pointerEvents = "none";
-    });
+  const fetchHeadContent = async url => {
+    const response = await fetch(url);
+    const text = await response.text();
+    const doc = new DOMParser().parseFromString(text, "text/html");
+    return doc.head.innerHTML;
   };
-  const enableLinkClicks = () => {
-    document.querySelectorAll("a").forEach(link => {
-      link.style.pointerEvents = "";
+  const updateHead = async newHeadHTML => {
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = newHeadHTML;
+
+    // Remove old head tags not present in new head
+    document.head.querySelectorAll("script, link, meta, title").forEach(oldTag => {
+      const newTag = tempDiv.querySelector(`[${oldTag.tagName.toLowerCase()}]`);
+      if (!newTag) oldTag.remove();
     });
-  };
-  const initAnimations = () => {
-    // Your animation initialization code here
+
+    // Add new head tags not present in old head
+    tempDiv.querySelectorAll("script, link, meta, title").forEach(newTag => {
+      const oldTag = document.head.querySelector(`[${newTag.tagName.toLowerCase()}]`);
+      if (!oldTag) document.head.appendChild(newTag);
+    });
   };
   const initBarba = () => {
     const mainContent = document.querySelector('main[data-barba="container"]');
@@ -9770,7 +9779,6 @@ document.addEventListener("DOMContentLoaded", function () {
           name: "height-transition",
           leave(data) {
             const done = this.async();
-            disableLinkClicks();
 
             // Animate the opacity of the current container
             gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.to(data.current.container, {
@@ -9787,7 +9795,7 @@ document.addEventListener("DOMContentLoaded", function () {
               }
             });
           },
-          enter(data) {
+          enter: async function (data) {
             const done = this.async();
 
             // Ensure the incoming container has no height initially
@@ -9795,17 +9803,18 @@ document.addEventListener("DOMContentLoaded", function () {
               opacity: 0
             });
 
+            // Update the head content
+            const newHeadHTML = await fetchHeadContent(data.next.url.href); // Correctly extracting the URL
+            await updateHead(newHeadHTML);
+
             // Expand the height of the incoming container and animate its opacity
             gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.to(data.next.container, {
               opacity: 1,
               duration: transitionDuration,
               ease: transitionEasing,
-              onComplete: () => {
-                enableLinkClicks();
-                initAnimations();
-                done();
-              }
+              onComplete: done
             });
+            initAnimations();
           }
         }],
         debug: true // Enable debugging to identify issues

@@ -1585,6 +1585,11 @@ function addAttributes(settings) {
     settings.attributes = {};
   }
 
+  // Skip adding custom attributes for specific blocks (like Gravity Forms) in the block editor
+  if (settings.name === "gravityforms/form") {
+    return settings;
+  }
+
   // Loop through each attribute in blockAttributes and add it if it doesn't exist
   Object.keys(_block_json__WEBPACK_IMPORTED_MODULE_1__.attributes).forEach(attribute => {
     if (!settings.attributes.hasOwnProperty(attribute)) {
@@ -1601,8 +1606,16 @@ const withInspectorControl = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_3__.
     const {
       attributes,
       setAttributes,
-      isSelected
+      isSelected,
+      name
     } = props;
+
+    // Skip adding custom controls for Gravity Forms block
+    if (name === "gravityforms/form") {
+      return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockEdit, {
+        ...props
+      });
+    }
     const {
       enableAnimation,
       animateLoop,
@@ -1960,8 +1973,16 @@ const withToolbarButton = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_3__.cre
     const {
       attributes,
       setAttributes,
-      isSelected
+      isSelected,
+      name
     } = props;
+
+    // Skip adding custom controls for Gravity Forms block
+    if (name === "gravityforms/form") {
+      return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockEdit, {
+        ...props
+      });
+    }
     const applyPreset = preset => {
       resetAttributes(setAttributes);
       switch (preset) {
