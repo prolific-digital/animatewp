@@ -1,0 +1,98 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "animatewp/animations",
+  "version": "1.0.0",
+  "title": "Animations",
+  "category": "media",
+  "description": "Add animations to your blocks",
+  "attributes": {
+    "enableAnimation": {
+      "type": "boolean",
+      "default": false
+    },
+    "animateLoop": {
+      "type": "boolean",
+      "default": false
+    },
+    "animateAutoPlay": {
+      "type": "boolean",
+      "default": false
+    },
+    "animateDuration": {
+      "type": "number",
+      "default": 1
+    },
+    "animateDelay": {
+      "type": "number",
+      "default": 0
+    },
+    "animateEasing": {
+      "type": "string",
+      "default": "Power2.easeInOut"
+    },
+    "animateX": {
+      "type": "number",
+      "default": 0
+    },
+    "animateY": {
+      "type": "number",
+      "default": 0
+    },
+    "animateXPercent": {
+      "type": "number",
+      "default": 0
+    },
+    "animateYPercent": {
+      "type": "number",
+      "default": 0
+    },
+    "animateScale": {
+      "type": "number",
+      "default": 1
+    },
+    "animateRotation": {
+      "type": "number",
+      "default": 0
+    },
+    "animateSkew": {
+      "type": "number",
+      "default": 0
+    },
+    "animateAutoAlpha": {
+      "type": "number",
+      "default": 1
+    },
+    "animateRepeat": {
+      "type": "number",
+      "default": 0
+    },
+    "animateYoYo": {
+      "type": "boolean",
+      "default": false
+    },
+    "enableScrollTrigger": {
+      "type": "boolean",
+      "default": false
+    },
+    "scrollTriggerStart": {
+      "type": "string",
+      "default": "top center"
+    },
+    "scrollTriggerEnd": {
+      "type": "string",
+      "default": "bottom center"
+    },
+    "scrollTriggerToggleActions": {
+      "type": "string",
+      "default": "play none none none"
+    },
+    "scrollTriggerStartOffset": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "textdomain": "animatewp",
+  "editorScript": "file:./index.js",
+  "viewScript": "file:./view.js"
+}
