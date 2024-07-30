@@ -7,8 +7,8 @@
  * Requires PHP:      7.4
  * Version:           1.0.0
  * Author:            Prolific Digital
- * Author URI:        https://prolificdigital.com
- * GitHub Plugin URI: https://github.com/prolific-digital/prolific-animations
+ * Author URI:        https://animatewp.com
+ * GitHub Plugin URI: https://github.com/prolific-digital/animatewp
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       animatewp
@@ -20,28 +20,34 @@ if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly.
 }
 
-// Enqueue the compiled script
-add_action('enqueue_block_editor_assets', 'prolific_animations_enqueue_block_editor_assets');
+add_action('enqueue_block_editor_assets', 'animatewp_enqueue_block_editor_assets');
+add_action('wp_enqueue_scripts', 'animatewp_enqueue_frontend');
 
-function prolific_animations_enqueue_block_editor_assets() {
+function animatewp_enqueue_block_editor_assets() {
 	$asset_file = include(plugin_dir_path(__FILE__) . 'build/animations/index.asset.php');
 
 	wp_enqueue_script(
 		'my-plugin-script',
 		plugin_dir_url(__FILE__) . 'build/animations/index.js',
 		$asset_file['dependencies'],
-		$asset_file['version']
+		$asset_file['version'],
+		true
 	);
 }
 
-// enqueue front end script
-add_action('wp_enqueue_scripts', 'prolific_animations_enqueue_frontend');
+// Check if the content contains any of the data attributes used for animations
+function animatewp_contains_data_attributes($content) {
+	return strpos($content, 'data-animation-') !== false;
+}
 
-function prolific_animations_enqueue_frontend() {
-	wp_enqueue_script(
-		'my-plugin-script',
-		plugin_dir_url(__FILE__) . 'build/animations/view.js',
-		array('wp-blocks', 'wp-element', 'wp-editor'),
-		filemtime(plugin_dir_path(__FILE__) . 'build/animations/view.js')
-	);
+function animatewp_enqueue_frontend() {
+	if (animatewp_contains_data_attributes(get_post()->post_content)) {
+		wp_enqueue_script(
+			'my-plugin-script',
+			plugin_dir_url(__FILE__) . 'build/animations/view.js',
+			array('wp-blocks', 'wp-element', 'wp-editor'),
+			filemtime(plugin_dir_path(__FILE__) . 'build/animations/view.js'),
+			true
+		);
+	}
 }

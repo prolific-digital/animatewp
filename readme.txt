@@ -1,14 +1,13 @@
 === AnimateWP ===
 Contributors: millertchris
-Donate link: https://prolificdigital.com
-Tags: animations, block editor, wordpress, plugin, custom animations, scroll trigger
+Donate link: https://animatewp.com
+Tags: animations, block editor, custom animations, scroll trigger
 Requires at least: 6.0
 Tested up to: 6.6.1
-Stable tag: 1.0
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
-AnimateWP is a game-changer for WordPress sites, empowering site creators, maintainers, designers, and content authors to effortlessly add captivating animations to any block or section.
+AnimateWP empowers WordPress users to easily add captivating animations to any block or section, transforming your site with dynamic visual flair.
 
 == Description ==
 
