@@ -89,7 +89,7 @@ const withInspectorControl = createHigherOrderComponent((BlockEdit) => {
         {isSelected && (
           <InspectorControls group="styles">
             <PanelBody
-              title={__("Animations", "prolific-blocks")}
+              title={__("Animations", "animatewp")}
               initialOpen={false}
               icon={symbolFilled}
             >

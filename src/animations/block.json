@@ -1,12 +1,11 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "create-block/prolific-blocks-animate",
-  "version": "0.1.0",
-  "title": "Carousel",
+  "name": "animatewp/animations",
+  "version": "1.0.0",
+  "title": "Animations",
   "category": "media",
-  "icon": "slides",
-  "description": "demo.",
+  "description": "Add animations to your blocks",
   "attributes": {
     "enableAnimation": {
       "type": "boolean",
@@ -93,7 +92,7 @@
       "default": 0
     }
   },
-  "textdomain": "prolific-blocks",
+  "textdomain": "animatewp",
   "editorScript": "file:./index.js",
   "viewScript": "file:./view.js"
 }
