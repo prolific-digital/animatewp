@@ -1,0 +1,24 @@
+{
+  "name": "animatewp",
+  "version": "0.1.0",
+  "description": "Add advanced animations to your WordPress site.",
+  "author": "Prolific Digital",
+  "license": "GPL-2.0-or-later",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "format": "wp-scripts format",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "packages-update": "wp-scripts packages-update",
+    "plugin-zip": "wp-scripts plugin-zip",
+    "start": "wp-scripts start"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^27.9.0"
+  },
+  "dependencies": {
+    "@wordpress/icons": "^10.4.0",
+    "gsap": "^3.12.5"
+  }
+}
