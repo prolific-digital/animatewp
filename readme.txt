@@ -1,6 +1,6 @@
 === AnimateWP ===
 Contributors: millertchris
-Donate link: https://prolificdigital.com
+Donate link: https://animatewp.com
 Tags: animations, block editor, custom animations, scroll trigger
 Requires at least: 6.0
 Tested up to: 6.6.1
