@@ -29,7 +29,7 @@ function prolific_animations_enqueue_block_editor_assets() {
 	$asset_file = include(plugin_dir_path(__FILE__) . 'build/animations/index.asset.php');
 
 	wp_enqueue_script(
-		'my-plugin-script',
+		'animatewp-editor',
 		plugin_dir_url(__FILE__) . 'build/animations/index.js',
 		$asset_file['dependencies'],
 		$asset_file['version']
@@ -41,7 +41,7 @@ add_action('wp_enqueue_scripts', 'prolific_animations_enqueue_frontend');
 
 function prolific_animations_enqueue_frontend() {
 	wp_enqueue_script(
-		'my-plugin-script',
+		'animatewp-view',
 		plugin_dir_url(__FILE__) . 'build/animations/view.js',
 		array('wp-blocks', 'wp-element', 'wp-editor'),
 		filemtime(plugin_dir_path(__FILE__) . 'build/animations/view.js')
