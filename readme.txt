@@ -4,7 +4,7 @@ Donate link: https://animatewp.com
 Tags: animations, block editor, custom animations, scroll trigger
 Requires at least: 6.0
 Tested up to: 6.6.1
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 AnimateWP empowers WordPress users to easily add captivating animations to any block or section, transforming your site with dynamic visual flair.
@@ -111,7 +111,12 @@ Happy animating!
 
 == Changelog ==
 
-= 1.0 =
+= 1.1.0 =
+
+- Added support for decimals in the delay settings for more granular control.
+- Increased duration and delay max values to 60 seconds.
+
+= 1.0.0 =
 
 - Initial release.
 
