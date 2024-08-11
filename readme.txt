@@ -131,10 +131,12 @@ AnimateWP is optimized for performance. However, like any plugin that adds anima
 
 == Screenshots ==
 
-1. ![Animation Demo](./assets/screenshots/demo.gif)
-2. ![Animation Settings](./assets/screenshots/example.png)
+1. Showcasing animation abilities
 
 == Changelog ==
+
+= 1.1.1 =
+* Updated readme
 
 = 1.1.0 =
 * Added support for decimals in the delay settings for more granular control.
