@@ -148,7 +148,7 @@ const withInspectorControl = createHigherOrderComponent((BlockEdit) => {
                       setAttributes({ animateDuration: value })
                     }
                     min={0.1}
-                    max={10}
+                    max={60}
                     step={0.1}
                     help={__(
                       "Set the duration of the animation in seconds.",
@@ -164,7 +164,7 @@ const withInspectorControl = createHigherOrderComponent((BlockEdit) => {
                     onChange={(value) => setAttributes({ animateDelay: value })}
                     min={0}
                     max={60}
-                    step={1}
+                    step={0.1}
                     help={__(
                       "Set the delay before the animation starts in seconds.",
                       "block-settings-enhancer"
