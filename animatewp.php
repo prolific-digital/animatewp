@@ -5,7 +5,7 @@
  * Description:       Add advanced animations to your WordPress site.
  * Requires at least: 6.1
  * Requires PHP:      7.4
- * Version:           1.1.0
+ * Version:           1.1.1
  * Author:            Prolific Digital
  * Author URI:        https://animatewp.com
  * GitHub Plugin URI: https://github.com/prolific-digital/animatewp
