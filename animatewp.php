@@ -20,6 +20,8 @@ if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly.
 }
 
+require_once plugin_dir_path(__FILE__) . 'includes/update-checker.php';
+
 // Enqueue the compiled script
 add_action('enqueue_block_editor_assets', 'prolific_animations_enqueue_block_editor_assets');
 
