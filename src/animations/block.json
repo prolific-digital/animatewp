@@ -90,6 +90,14 @@
     "scrollTriggerStartOffset": {
       "type": "number",
       "default": 0
+    },
+    "enableParallax": {
+      "type": "boolean",
+      "default": false
+    },
+    "parallaxSpeed": {
+      "type": "number",
+      "default": 0
     }
   },
   "textdomain": "animatewp",

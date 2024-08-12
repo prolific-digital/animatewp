@@ -70,4 +70,25 @@ document.addEventListener("DOMContentLoaded", () => {
       animation.play();
     }
   });
+
+  document.querySelectorAll(".has-parallax").forEach((element) => {
+    const parallaxSpeed =
+      parseFloat(element.getAttribute("data-parallax-speed")) || 0.5;
+
+    gsap.fromTo(
+      element,
+      { y: `${50 * parallaxSpeed}%` },
+      {
+        y: `${-50 * parallaxSpeed}%`,
+        ease: "none",
+        scrollTrigger: {
+          trigger: element,
+          start: "top bottom", // Trigger when the element starts entering the viewport
+          end: "bottom top", // End the effect when the element is about to exit the viewport
+          scrub: true,
+          invalidateOnRefresh: true, // to make it responsive
+        },
+      }
+    );
+  });
 });

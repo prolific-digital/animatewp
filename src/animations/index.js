@@ -81,6 +81,8 @@ const withInspectorControl = createHigherOrderComponent((BlockEdit) => {
       scrollTriggerEnd,
       scrollTriggerToggleActions,
       scrollTriggerStartOffset,
+      enableParallax,
+      parallaxSpeed,
     } = attributes;
 
     return (
@@ -119,14 +121,35 @@ const withInspectorControl = createHigherOrderComponent((BlockEdit) => {
               {enableAnimation && (
                 <>
                   <ToggleControl
-                    label={__("Loop", "block-settings-enhancer")}
-                    checked={animateLoop}
-                    onChange={(value) => setAttributes({ animateLoop: value })}
+                    label={__("Enable Parallax", "block-settings-enhancer")}
+                    checked={enableParallax}
+                    onChange={(value) =>
+                      setAttributes({ enableParallax: value })
+                    }
                     help={__(
-                      "Enable this option to loop the animation.",
+                      "Enable this option to add a parallax animation to the block.",
                       "block-settings-enhancer"
                     )}
                   />
+
+                  {/* check if parallax is enabled */}
+                  {enableParallax && (
+                    <RangeControl
+                      label={__("Parallax Speed", "block-settings-enhancer")}
+                      value={parallaxSpeed}
+                      onChange={(value) =>
+                        setAttributes({ parallaxSpeed: value })
+                      }
+                      min={-10}
+                      max={10}
+                      step={0.1}
+                      help={__(
+                        "Set the duration of the parallax speed in seconds.",
+                        "block-settings-enhancer"
+                      )}
+                    />
+                  )}
+
                   <ToggleControl
                     label={__("Auto Play", "block-settings-enhancer")}
                     checked={animateAutoPlay}
@@ -416,7 +439,14 @@ function saveSettings(extraProps, blockType, attributes) {
     scrollTriggerEnd,
     scrollTriggerToggleActions,
     scrollTriggerStartOffset,
+    enableParallax,
+    parallaxSpeed,
   } = attributes;
+
+  if (enableParallax) {
+    extraProps.className = `${extraProps.className} has-parallax`;
+    extraProps["data-parallax-speed"] = parallaxSpeed;
+  }
 
   if (enableAnimation) {
     extraProps.className = `${extraProps.className} has-animation`;
@@ -509,6 +539,8 @@ const resetAttributes = (setAttributes) => {
     scrollTriggerEnd: "bottom top",
     scrollTriggerToggleActions: "play none none none",
     scrollTriggerStartOffset: 0,
+    enableParallax: false,
+    parallaxSpeed: 1,
   });
 };
 
