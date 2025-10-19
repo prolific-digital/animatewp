@@ -4,7 +4,7 @@
  * Adds GSAP-powered animation controls to all WordPress blocks via Higher-Order Components.
  * Provides animation presets, customizable settings, and ScrollTrigger support.
  *
- * @package AnimateWP
+ * @package
  */
 
 import './editor.scss';
@@ -19,7 +19,7 @@ import ToolbarControls from './components/ToolbarControls';
 
 // Import utilities
 import { saveSettings } from './utils/attributeHelpers';
-import { getExcludedBlocks, isBlockExcluded } from './utils/blockHelpers';
+import { isBlockExcluded } from './utils/blockHelpers';
 
 /**
  * Add animation attributes to all blocks (except excluded ones)
@@ -120,9 +120,7 @@ const withAnimationIndicator = createHigherOrderComponent(
 			return (
 				<BlockListBlock
 					{ ...props }
-					className={
-						hasAnimation ? 'has-animatewp-animation' : ''
-					}
+					className={ hasAnimation ? 'has-animatewp-animation' : '' }
 				/>
 			);
 		};

@@ -2,7 +2,7 @@
  * Block Helper Functions
  * Functions for managing block exclusions and filtering
  *
- * @package AnimateWP
+ * @package
  */
 
 import { applyFilters } from '@wordpress/hooks';

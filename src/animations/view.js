@@ -4,7 +4,7 @@
  * Initializes and manages GSAP animations on blocks with animation attributes.
  * Supports ScrollTrigger integration and handles proper cleanup on page unload.
  *
- * @package AnimateWP
+ * @package
  */
 
 import { gsap } from 'gsap';
@@ -23,6 +23,7 @@ document.addEventListener( 'DOMContentLoaded', () => {
 		try {
 			// Validate element exists
 			if ( ! element ) {
+				// eslint-disable-next-line no-console
 				console.warn(
 					'AnimateWP: Invalid element encountered, skipping animation'
 				);
@@ -40,8 +41,6 @@ document.addEventListener( 'DOMContentLoaded', () => {
 				element.getAttribute( 'data-animation-ease' ) || 'power1.inOut';
 			const direction =
 				element.getAttribute( 'data-animation-direction' ) || 'from';
-			const loop =
-				element.getAttribute( 'data-loop-animation' ) === 'true';
 			const autoPlay =
 				element.getAttribute( 'data-auto-play-animation' ) === 'true';
 			const x =
@@ -90,17 +89,17 @@ document.addEventListener( 'DOMContentLoaded', () => {
 			);
 
 			const animationConfig = {
-				duration: duration,
-				delay: delay,
-				ease: ease,
-				x: x,
-				y: y,
-				xPercent: xPercent,
-				yPercent: yPercent,
-				scale: scale,
-				rotation: rotation,
-				autoAlpha: autoAlpha,
-				repeat: repeat,
+				duration,
+				delay,
+				ease,
+				x,
+				y,
+				xPercent,
+				yPercent,
+				scale,
+				rotation,
+				autoAlpha,
+				repeat,
 				yoyo: yoYo,
 				paused: ! autoPlay,
 			};
@@ -137,6 +136,7 @@ document.addEventListener( 'DOMContentLoaded', () => {
 			// Store animation for cleanup
 			animations.push( animation );
 		} catch ( error ) {
+			// eslint-disable-next-line no-console
 			console.error(
 				'AnimateWP: Error creating animation for element:',
 				element,

@@ -2,7 +2,7 @@
  * Toolbar Controls Component
  * Provides animation preset dropdown in the block toolbar
  *
- * @package AnimateWP
+ * @package
  */
 
 import { BlockControls } from '@wordpress/block-editor';
@@ -15,7 +15,7 @@ import { getPresetConfig } from '../presets/animationPresets';
 /**
  * Apply an animation preset to the block
  *
- * @param {string} presetName - Name of the preset to apply
+ * @param {string}   presetName    - Name of the preset to apply
  * @param {Function} setAttributes - WordPress setAttributes function
  */
 const applyPreset = ( presetName, setAttributes ) => {
@@ -34,7 +34,7 @@ const applyPreset = ( presetName, setAttributes ) => {
  * Toolbar Controls Component
  * Renders the animation preset dropdown in the block toolbar
  *
- * @param {Object} props - Component props
+ * @param {Object}   props               - Component props
  * @param {Function} props.setAttributes - Function to update attributes
  * @return {JSX.Element} Toolbar controls
  */
@@ -84,7 +84,8 @@ const ToolbarControls = ( { setAttributes } ) => {
 						{
 							title: 'Bounce',
 							icon: <AnimatedIcon />,
-							onClick: () => applyPreset( 'Bounce', setAttributes ),
+							onClick: () =>
+								applyPreset( 'Bounce', setAttributes ),
 						},
 						{
 							title: 'Zoom In',
@@ -101,7 +102,8 @@ const ToolbarControls = ( { setAttributes } ) => {
 						{
 							title: 'Rotate',
 							icon: <AnimatedIcon />,
-							onClick: () => applyPreset( 'Rotate', setAttributes ),
+							onClick: () =>
+								applyPreset( 'Rotate', setAttributes ),
 						},
 						{
 							title: 'Flip',
@@ -111,12 +113,14 @@ const ToolbarControls = ( { setAttributes } ) => {
 						{
 							title: 'Shake',
 							icon: <AnimatedIcon />,
-							onClick: () => applyPreset( 'Shake', setAttributes ),
+							onClick: () =>
+								applyPreset( 'Shake', setAttributes ),
 						},
 						{
 							title: 'Pulse',
 							icon: <AnimatedIcon />,
-							onClick: () => applyPreset( 'Pulse', setAttributes ),
+							onClick: () =>
+								applyPreset( 'Pulse', setAttributes ),
 						},
 						{
 							title: 'Wobble',

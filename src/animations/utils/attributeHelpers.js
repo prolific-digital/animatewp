@@ -2,7 +2,7 @@
  * Attribute Helper Functions
  * Functions for managing block animation attributes
  *
- * @package AnimateWP
+ * @package
  */
 
 /**
@@ -10,7 +10,7 @@
  * Converts block attributes to data attributes for frontend use
  *
  * @param {Object} extraProps - Block extra props to modify
- * @param {Object} blockType - Block type object
+ * @param {Object} blockType  - Block type object
  * @param {Object} attributes - Block attributes
  * @return {Object} Modified extraProps
  */
@@ -114,9 +114,9 @@ export const resetAttributes = ( setAttributes ) => {
 /**
  * Validate numeric input to prevent invalid values
  *
- * @param {number} value - Value to validate
- * @param {number} min - Minimum allowed value
- * @param {number} max - Maximum allowed value
+ * @param {number} value        - Value to validate
+ * @param {number} min          - Minimum allowed value
+ * @param {number} max          - Maximum allowed value
  * @param {number} defaultValue - Default value if validation fails
  * @return {number} Validated value
  */

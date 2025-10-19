@@ -2,7 +2,7 @@
  * Animated lightning bolt icon component
  * Used in toolbar dropdown and preset controls
  *
- * @package AnimateWP
+ * @package
  */
 
 /**

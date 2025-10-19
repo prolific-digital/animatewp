@@ -2,7 +2,7 @@
  * Inspector Panel Component
  * Provides all sidebar controls for animation settings
  *
- * @package AnimateWP
+ * @package
  */
 
 import { InspectorControls } from '@wordpress/block-editor';
@@ -83,8 +83,8 @@ const DIRECTION_OPTIONS = [
  * Inspector Panel Component
  * Renders all animation control panels in the block sidebar
  *
- * @param {Object} props - Component props
- * @param {Object} props.attributes - Block attributes
+ * @param {Object}   props               - Component props
+ * @param {Object}   props.attributes    - Block attributes
  * @param {Function} props.setAttributes - Function to update attributes
  * @return {JSX.Element} Inspector panel controls
  */

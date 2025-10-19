@@ -2,7 +2,7 @@
  * Animation Preset Configurations
  * Defines all available animation presets and their settings
  *
- * @package AnimateWP
+ * @package
  */
 
 /**
@@ -61,7 +61,7 @@ export const ANIMATION_PRESETS = {
 		animateX: -100,
 		animateAutoAlpha: 0,
 	},
-	'Bounce': {
+	Bounce: {
 		enableAnimation: true,
 		enableScrollTrigger: true,
 		scrollTriggerStart: 'top bottom',
@@ -88,7 +88,7 @@ export const ANIMATION_PRESETS = {
 		animateEasing: 'power1.inOut',
 		animateScale: 100,
 	},
-	'Rotate': {
+	Rotate: {
 		enableAnimation: true,
 		enableScrollTrigger: true,
 		scrollTriggerStart: 'top bottom',
@@ -97,7 +97,7 @@ export const ANIMATION_PRESETS = {
 		animateEasing: 'power1.inOut',
 		animateRotation: 360,
 	},
-	'Flip': {
+	Flip: {
 		enableAnimation: true,
 		enableScrollTrigger: true,
 		scrollTriggerStart: 'top bottom',
@@ -106,7 +106,7 @@ export const ANIMATION_PRESETS = {
 		animateEasing: 'power1.inOut',
 		animateRotation: 180,
 	},
-	'Shake': {
+	Shake: {
 		enableAnimation: true,
 		enableScrollTrigger: true,
 		scrollTriggerStart: 'top bottom',
@@ -117,7 +117,7 @@ export const ANIMATION_PRESETS = {
 		animateRepeat: -1,
 		animateYoYo: true,
 	},
-	'Pulse': {
+	Pulse: {
 		enableAnimation: true,
 		enableScrollTrigger: true,
 		scrollTriggerStart: 'top bottom',
@@ -128,7 +128,7 @@ export const ANIMATION_PRESETS = {
 		animateRepeat: -1,
 		animateYoYo: true,
 	},
-	'Wobble': {
+	Wobble: {
 		enableAnimation: true,
 		enableScrollTrigger: true,
 		scrollTriggerStart: 'top bottom',
