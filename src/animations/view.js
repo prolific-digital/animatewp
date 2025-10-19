@@ -106,12 +106,22 @@ document.addEventListener( 'DOMContentLoaded', () => {
 			};
 
 			if ( enableScrollTrigger ) {
-				animationConfig.scrollTrigger = {
+				const scrollTriggerConfig = {
 					trigger: element,
 					start: `${ scrollTriggerStart }+=${ scrollTriggerStartOffset }`,
 					end: scrollTriggerEnd,
 					toggleActions: scrollTriggerToggleActions,
 				};
+
+				// Add debug markers if enabled in settings and user is admin
+				if (
+					window.animateWP?.debugMode &&
+					window.animateWP?.isAdmin
+				) {
+					scrollTriggerConfig.markers = true;
+				}
+
+				animationConfig.scrollTrigger = scrollTriggerConfig;
 			}
 
 			// Use direction to determine whether to use gsap.from() or gsap.to()
