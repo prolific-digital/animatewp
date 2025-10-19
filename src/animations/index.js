@@ -680,7 +680,7 @@ const withInspectorControl = createHigherOrderComponent( ( BlockEdit ) => {
 
 addFilter(
 	'editor.BlockEdit',
-	'block-settings-enhancer/with-inspector-control',
+	'animatewp/with-inspector-control',
 	withInspectorControl
 );
 
@@ -1086,6 +1086,6 @@ const withToolbarButton = createHigherOrderComponent( ( BlockEdit ) => {
 
 addFilter(
 	'editor.BlockEdit',
-	'block-settings-enhancer/with-toolbar-button',
+	'animatewp/with-toolbar-button',
 	withToolbarButton
 );
