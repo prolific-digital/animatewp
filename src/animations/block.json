@@ -29,7 +29,7 @@
 		},
 		"animateEasing": {
 			"type": "string",
-			"default": "Power2.easeInOut"
+			"default": "power1.inOut"
 		},
 		"animateX": {
 			"type": "number",
@@ -77,11 +77,11 @@
 		},
 		"scrollTriggerStart": {
 			"type": "string",
-			"default": "top center"
+			"default": "top bottom"
 		},
 		"scrollTriggerEnd": {
 			"type": "string",
-			"default": "bottom center"
+			"default": "bottom top"
 		},
 		"scrollTriggerToggleActions": {
 			"type": "string",
