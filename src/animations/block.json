@@ -90,6 +90,10 @@
     "scrollTriggerStartOffset": {
       "type": "number",
       "default": 0
+    },
+    "animateDirection": {
+      "type": "string",
+      "default": "from"
     }
   },
   "textdomain": "animatewp",
