@@ -98,3 +98,5 @@ For further assistance, contact [support@prolificdigital.com](mailto:support@pro
 AnimateWP is a powerful tool that brings your WordPress site to life with engaging and customizable animations. Whether you're looking to enhance user interaction or add visual flair to your content, AnimateWP provides the flexibility and control you need.
 
 Happy animating!
+
+Made by [Prolific Digital](https://prolificdigital.com).

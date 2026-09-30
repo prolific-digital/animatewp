@@ -7,7 +7,7 @@
  * Requires PHP:      7.4
  * Version:           1.1.1
  * Author:            Prolific Digital
- * Author URI:        https://animatewp.com
+ * Author URI:        https://prolificdigital.com
  * GitHub Plugin URI: https://github.com/prolific-digital/animatewp
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
