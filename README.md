@@ -20,6 +20,18 @@ Looking for more documentation?
 1. Upload the plugin files to the `/wp-content/plugins/animatewp` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress.
 
+Requires WordPress 6.5+ and PHP 8.4+. Release zips (`animatewp.zip`) are attached to [GitHub releases](https://github.com/prolific-digital/animatewp/releases).
+
+### Updates
+
+Updates are served by the Prolific Digital license server. Add the site's license key to `wp-config.php`:
+
+```php
+define( 'PROLIFIC_LICENSE_KEY_ANIMATEWP', 'your-key' );
+```
+
+You can also supply the key with the `prolific_license_key` filter, which receives `( $key, 'animatewp' )`.
+
 ## Usage
 
 Once the AnimateWP plugin is activated, you'll find new animation options available for every block within the block editor.
@@ -98,3 +110,23 @@ For further assistance, contact [support@prolificdigital.com](mailto:support@pro
 AnimateWP is a powerful tool that brings your WordPress site to life with engaging and customizable animations. Whether you're looking to enhance user interaction or add visual flair to your content, AnimateWP provides the flexibility and control you need.
 
 Happy animating!
+
+## Development
+
+`build/` **is committed** in this repository. Rebuild and commit it whenever `src/` changes:
+
+```sh
+npm ci
+npm run build
+ddev exec -d /var/www/html/wp-content/plugins/animatewp composer install
+ddev exec -d /var/www/html/wp-content/plugins/animatewp composer lint
+ddev exec -d /var/www/html/wp-content/plugins/animatewp composer phpcs
+```
+
+`vendor/` is not committed. A git checkout needs `composer install` before the updater loads (the plugin still runs without it).
+
+## Releasing
+
+1. Bump the version in the plugin header, `ANIMATEWP_VERSION`, `readme.txt` `Stable tag`, `package.json` and `package-lock.json`.
+2. Add a `## [x.y.z] - YYYY-MM-DD` section to `CHANGELOG.md` and a `= x.y.z =` entry to `readme.txt`.
+3. Merge to `main`, then push a `vx.y.z` tag. The shared release workflow runs `composer install --no-dev` and `npm ci && npm run build`, then builds `animatewp.zip` (honoring `.distignore`) and attaches it to a GitHub Release.
