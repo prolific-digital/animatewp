@@ -1,25 +1,25 @@
 <?php
-
 /**
  * Plugin Name:       AnimateWP
+ * Plugin URI:        https://prolificdigital.com
  * Description:       Add advanced animations to your WordPress site.
- * Requires at least: 6.1
- * Requires PHP:      7.4
- * Version:           1.1.1
+ * Version:           1.2.0
+ * Requires at least: 6.5
+ * Requires PHP:      8.4
  * Author:            Prolific Digital
- * Author URI:        https://animatewp.com
- * GitHub Plugin URI: https://github.com/prolific-digital/animatewp
+ * Author URI:        https://prolificdigital.com
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       animatewp
+ * Domain Path:       /languages
+ * Update URI:        https://api.prolificdigital.io/api/update?plugin=animatewp
  *
- * @package CreateBlock
+ * @package AnimateWP
  */
 
-if (!defined('ABSPATH')) {
-	exit; // Exit if accessed directly.
-}
+defined( 'ABSPATH' ) || exit;
 
+define( 'ANIMATEWP_VERSION', '1.2.0' );
 define( 'ANIMATEWP_PLUGIN_FILE', __FILE__ );
 define( 'ANIMATEWP_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
@@ -30,6 +30,16 @@ if ( is_readable( ANIMATEWP_PLUGIN_DIR . 'vendor/autoload.php' ) ) {
 }
 
 require_once ANIMATEWP_PLUGIN_DIR . 'includes/update-checker.php';
+
+/**
+ * Load bundled translations from /languages (the header's Domain Path).
+ */
+add_action(
+	'init',
+	static function () {
+		load_plugin_textdomain( 'animatewp', false, dirname( plugin_basename( ANIMATEWP_PLUGIN_FILE ) ) . '/languages' );
+	}
+);
 
 add_action('enqueue_block_editor_assets', 'animatewp_enqueue_block_editor_assets');
 add_action('wp_enqueue_scripts', 'animatewp_enqueue_frontend');
