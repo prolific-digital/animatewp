@@ -1,0 +1,26 @@
+# Files excluded from the release zip (wp dist-archive / rsync --exclude-from syntax).
+/.git
+/.github
+/.gitignore
+/.gitattributes
+/.distignore
+/.editorconfig
+/.nvmrc
+.DS_Store
+/node_modules
+/tests
+/bin
+/phpcs.xml
+/phpcs.xml.dist
+/phpunit.xml.dist
+/composer.json
+/composer.lock
+/package.json
+/package-lock.json
+/yarn.lock
+/README.md
+/CLAUDE.md
+/src
+/assets
+*.zip
+*.log
