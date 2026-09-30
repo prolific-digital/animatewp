@@ -20,7 +20,16 @@ if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly.
 }
 
-require_once plugin_dir_path(__FILE__) . 'includes/update-checker.php';
+define( 'ANIMATEWP_PLUGIN_FILE', __FILE__ );
+define( 'ANIMATEWP_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+
+// Composer dependencies (plugin-update-checker). Present in release zips;
+// in a git checkout run `composer install` first.
+if ( is_readable( ANIMATEWP_PLUGIN_DIR . 'vendor/autoload.php' ) ) {
+	require_once ANIMATEWP_PLUGIN_DIR . 'vendor/autoload.php';
+}
+
+require_once ANIMATEWP_PLUGIN_DIR . 'includes/update-checker.php';
 
 add_action('enqueue_block_editor_assets', 'animatewp_enqueue_block_editor_assets');
 add_action('wp_enqueue_scripts', 'animatewp_enqueue_frontend');

@@ -1,0 +1,38 @@
+{
+    "name": "prolific-digital/animatewp",
+    "description": "Add advanced animations to your WordPress site.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Prolific Digital",
+            "homepage": "https://prolificdigital.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.4",
+        "yahnis-elsts/plugin-update-checker": "^5.7"
+    },
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+        "phpcompatibility/phpcompatibility-wp": "^3.0@alpha",
+        "squizlabs/php_codesniffer": "^3.10",
+        "wp-coding-standards/wpcs": "^3.1"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "platform": {
+            "php": "8.4"
+        },
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "scripts": {
+        "lint": "find . -path ./vendor -prune -o -path ./node_modules -prune -o -name '*.php' -print0 | xargs -0 -n1 php -l",
+        "phpcs": "phpcs"
+    },
+    "minimum-stability": "alpha",
+    "prefer-stable": true
+}
