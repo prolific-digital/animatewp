@@ -96,52 +96,52 @@ const withInspectorControl = createHigherOrderComponent((BlockEdit) => {
               <Notice isDismissible={false}>
                 {__(
                   "Looking for documentation on how to use these settings?",
-                  "block-settings-enhancer"
+                  "animatewp"
                 )}
                 <a
                   href="https://prolificdigital.notion.site/Prolific-Animations-WordPress-Plugin-138f73948280458d9a2bcd298ac62354?pvs=4"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {__("Learn more", "block-settings-enhancer")}
+                  {__("Learn more", "animatewp")}
                 </a>
               </Notice>
               <div style={{ marginBottom: "20px" }}></div>
               <ToggleControl
-                label={__("Enable Animation", "block-settings-enhancer")}
+                label={__("Enable Animation", "animatewp")}
                 checked={enableAnimation}
                 onChange={(value) => setAttributes({ enableAnimation: value })}
                 help={__(
                   "Enable this option to add animation to the block.",
-                  "block-settings-enhancer"
+                  "animatewp"
                 )}
               />
               {enableAnimation && (
                 <>
                   <ToggleControl
-                    label={__("Loop", "block-settings-enhancer")}
+                    label={__("Loop", "animatewp")}
                     checked={animateLoop}
                     onChange={(value) => setAttributes({ animateLoop: value })}
                     help={__(
                       "Enable this option to loop the animation.",
-                      "block-settings-enhancer"
+                      "animatewp"
                     )}
                   />
                   <ToggleControl
-                    label={__("Auto Play", "block-settings-enhancer")}
+                    label={__("Auto Play", "animatewp")}
                     checked={animateAutoPlay}
                     onChange={(value) =>
                       setAttributes({ animateAutoPlay: value })
                     }
                     help={__(
                       "Enable this option to auto play the animation.",
-                      "block-settings-enhancer"
+                      "animatewp"
                     )}
                   />
                   <RangeControl
                     label={__(
                       "Animation Duration (seconds)",
-                      "block-settings-enhancer"
+                      "animatewp"
                     )}
                     value={animateDuration}
                     onChange={(value) =>
@@ -152,13 +152,13 @@ const withInspectorControl = createHigherOrderComponent((BlockEdit) => {
                     step={0.1}
                     help={__(
                       "Set the duration of the animation in seconds.",
-                      "block-settings-enhancer"
+                      "animatewp"
                     )}
                   />
                   <RangeControl
                     label={__(
                       "Animation Delay (seconds)",
-                      "block-settings-enhancer"
+                      "animatewp"
                     )}
                     value={animateDelay}
                     onChange={(value) => setAttributes({ animateDelay: value })}
@@ -167,11 +167,11 @@ const withInspectorControl = createHigherOrderComponent((BlockEdit) => {
                     step={0.1}
                     help={__(
                       "Set the delay before the animation starts in seconds.",
-                      "block-settings-enhancer"
+                      "animatewp"
                     )}
                   />
                   <SelectControl
-                    label={__("Animation Easing", "block-settings-enhancer")}
+                    label={__("Animation Easing", "animatewp")}
                     value={animateEasing}
                     options={[
                       { label: "Power1.inOut", value: "power1.inOut" },
@@ -187,11 +187,11 @@ const withInspectorControl = createHigherOrderComponent((BlockEdit) => {
                     }
                     help={__(
                       "Choose the easing function for the animation.",
-                      "block-settings-enhancer"
+                      "animatewp"
                     )}
                   />
                   <RangeControl
-                    label={__("X Position (px)", "block-settings-enhancer")}
+                    label={__("X Position (px)", "animatewp")}
                     value={animateX}
                     onChange={(value) => setAttributes({ animateX: value })}
                     min={-1000}
@@ -199,11 +199,11 @@ const withInspectorControl = createHigherOrderComponent((BlockEdit) => {
                     step={1}
                     help={__(
                       "Set the X position for the animation in pixels.",
-                      "block-settings-enhancer"
+                      "animatewp"
                     )}
                   />
                   <RangeControl
-                    label={__("Y Position (px)", "block-settings-enhancer")}
+                    label={__("Y Position (px)", "animatewp")}
                     value={animateY}
                     onChange={(value) => setAttributes({ animateY: value })}
                     min={-1000}
@@ -211,11 +211,11 @@ const withInspectorControl = createHigherOrderComponent((BlockEdit) => {
                     step={1}
                     help={__(
                       "Set the Y position for the animation in pixels.",
-                      "block-settings-enhancer"
+                      "animatewp"
                     )}
                   />
                   <RangeControl
-                    label={__("X Percent (%)", "block-settings-enhancer")}
+                    label={__("X Percent (%)", "animatewp")}
                     value={animateXPercent}
                     onChange={(value) =>
                       setAttributes({ animateXPercent: value })
@@ -225,11 +225,11 @@ const withInspectorControl = createHigherOrderComponent((BlockEdit) => {
                     step={1}
                     help={__(
                       "Set the X position as a percentage for the animation.",
-                      "block-settings-enhancer"
+                      "animatewp"
                     )}
                   />
                   <RangeControl
-                    label={__("Y Percent (%)", "block-settings-enhancer")}
+                    label={__("Y Percent (%)", "animatewp")}
                     value={animateYPercent}
                     onChange={(value) =>
                       setAttributes({ animateYPercent: value })
@@ -239,11 +239,11 @@ const withInspectorControl = createHigherOrderComponent((BlockEdit) => {
                     step={1}
                     help={__(
                       "Set the Y position as a percentage for the animation.",
-                      "block-settings-enhancer"
+                      "animatewp"
                     )}
                   />
                   <RangeControl
-                    label={__("Scale", "block-settings-enhancer")}
+                    label={__("Scale", "animatewp")}
                     value={animateScale}
                     onChange={(value) => setAttributes({ animateScale: value })}
                     min={-100}
@@ -251,11 +251,11 @@ const withInspectorControl = createHigherOrderComponent((BlockEdit) => {
                     step={0.1}
                     help={__(
                       "Set the scale for the animation.",
-                      "block-settings-enhancer"
+                      "animatewp"
                     )}
                   />
                   <RangeControl
-                    label={__("Rotation (degrees)", "block-settings-enhancer")}
+                    label={__("Rotation (degrees)", "animatewp")}
                     value={animateRotation}
                     onChange={(value) =>
                       setAttributes({ animateRotation: value })
@@ -265,11 +265,11 @@ const withInspectorControl = createHigherOrderComponent((BlockEdit) => {
                     step={1}
                     help={__(
                       "Set the rotation for the animation in degrees.",
-                      "block-settings-enhancer"
+                      "animatewp"
                     )}
                   />
                   <RangeControl
-                    label={__("Opacity", "block-settings-enhancer")}
+                    label={__("Opacity", "animatewp")}
                     value={animateAutoAlpha}
                     onChange={(value) =>
                       setAttributes({ animateAutoAlpha: value })
@@ -279,11 +279,11 @@ const withInspectorControl = createHigherOrderComponent((BlockEdit) => {
                     step={0.1}
                     help={__(
                       "Set the opacity for the animation.",
-                      "block-settings-enhancer"
+                      "animatewp"
                     )}
                   />
                   <RangeControl
-                    label={__("Repeat", "block-settings-enhancer")}
+                    label={__("Repeat", "animatewp")}
                     value={animateRepeat}
                     onChange={(value) =>
                       setAttributes({ animateRepeat: value })
@@ -293,22 +293,22 @@ const withInspectorControl = createHigherOrderComponent((BlockEdit) => {
                     step={1}
                     help={__(
                       "Set the number of times the animation should repeat.",
-                      "block-settings-enhancer"
+                      "animatewp"
                     )}
                   />
                   <ToggleControl
-                    label={__("Yo-Yo", "block-settings-enhancer")}
+                    label={__("Yo-Yo", "animatewp")}
                     checked={animateYoYo}
                     onChange={(value) => setAttributes({ animateYoYo: value })}
                     help={__(
                       "Enable this option to make the animation reverse on repeat.",
-                      "block-settings-enhancer"
+                      "animatewp"
                     )}
                   />
                   <ToggleControl
                     label={__(
                       "Enable Scroll Trigger",
-                      "block-settings-enhancer"
+                      "animatewp"
                     )}
                     checked={enableScrollTrigger}
                     onChange={(value) =>
@@ -316,7 +316,7 @@ const withInspectorControl = createHigherOrderComponent((BlockEdit) => {
                     }
                     help={__(
                       "Enable this option to trigger the animation on scroll.",
-                      "block-settings-enhancer"
+                      "animatewp"
                     )}
                   />
                   {enableScrollTrigger && (
@@ -324,7 +324,7 @@ const withInspectorControl = createHigherOrderComponent((BlockEdit) => {
                       <SelectControl
                         label={__(
                           "Scroll Trigger Start",
-                          "block-settings-enhancer"
+                          "animatewp"
                         )}
                         value={scrollTriggerStart}
                         options={[
@@ -342,7 +342,7 @@ const withInspectorControl = createHigherOrderComponent((BlockEdit) => {
                           <span>
                             {__(
                               "Select the start point for the scroll trigger. ",
-                              "block-settings-enhancer"
+                              "animatewp"
                             )}
                             <a
                               href="https://prolificdigital.notion.site/Prolific-Animations-WordPress-Plugin-138f73948280458d9a2bcd298ac62354#e6fd93c8324442b3919c67b0a1a8ab19"
@@ -351,7 +351,7 @@ const withInspectorControl = createHigherOrderComponent((BlockEdit) => {
                             >
                               {__(
                                 "Learn more about ScrollTrigger.",
-                                "block-settings-enhancer"
+                                "animatewp"
                               )}
                             </a>
                           </span>
@@ -360,7 +360,7 @@ const withInspectorControl = createHigherOrderComponent((BlockEdit) => {
                       <RangeControl
                         label={__(
                           "Scroll Trigger Start Offset (px)",
-                          "block-settings-enhancer"
+                          "animatewp"
                         )}
                         value={scrollTriggerStartOffset}
                         onChange={(value) =>
@@ -371,7 +371,7 @@ const withInspectorControl = createHigherOrderComponent((BlockEdit) => {
                         step={1}
                         help={__(
                           "Set an offset for the scroll trigger start point in pixels.",
-                          "block-settings-enhancer"
+                          "animatewp"
                         )}
                       />
                     </>
@@ -691,7 +691,7 @@ const withToolbarButton = createHigherOrderComponent((BlockEdit) => {
             <Toolbar>
               <ToolbarDropdownMenu
                 icon={<AnimatedIcon />}
-                label={__("Animation Presets", "block-settings-enhancer")}
+                label={__("Animation Presets", "animatewp")}
                 controls={[
                   {
                     title: "None",

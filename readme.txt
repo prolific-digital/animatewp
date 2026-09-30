@@ -1,13 +1,13 @@
 === AnimateWP ===
-Contributors: millertchris
+Contributors: prolificdigital, millertchris
 Donate link: https://animatewp.com
-Tags: animations, block-editor, gsap, scroll trigger,
-Requires at least: 6.0
-Tested up to: 6.6.1
-Stable tag: 1.1.1
-Requires PHP: 8.0
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: animations, block-editor, gsap, scroll trigger
+Requires at least: 6.5
+Tested up to: 7.1
+Requires PHP: 8.4
+Stable tag: 1.2.0
+License: GPL-2.0-or-later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 AnimateWP empowers WordPress users to easily add captivating animations to any block or section, transforming your site with dynamic visual flair.
 
@@ -98,6 +98,13 @@ AnimateWP is a powerful tool that brings your WordPress site to life with engagi
 
 Happy animating!
 
+== Installation ==
+
+1. Upload the `animatewp` folder to `/wp-content/plugins/`, or install the release zip from **Plugins > Add New > Upload Plugin**.
+2. Activate the plugin.
+3. To receive automatic updates, add your license key to `wp-config.php`:
+   `define( 'PROLIFIC_LICENSE_KEY_ANIMATEWP', 'your-key' );`
+
 == Frequently Asked Questions ==
 
 = How do I add an animation to a block? =
@@ -135,6 +142,12 @@ AnimateWP is optimized for performance. However, like any plugin that adds anima
 
 == Changelog ==
 
+= 1.2.0 =
+* Updates now come from the Prolific Digital license server instead of GitHub. Define `PROLIFIC_LICENSE_KEY_ANIMATEWP` to receive them.
+* plugin-update-checker is installed with Composer instead of bundled in the plugin.
+* Editor strings now use the `animatewp` text domain.
+* Requires WordPress 6.5+ and PHP 8.4+.
+
 = 1.1.1 =
 * Updated readme
 
@@ -146,6 +159,9 @@ AnimateWP is optimized for performance. However, like any plugin that adds anima
 * Initial release of AnimateWP with core features including presets and advanced settings.
 
 == Upgrade Notice ==
+
+= 1.2.0 =
+Requires PHP 8.4+. Updates now need a license key constant in wp-config.php.
 
 = 1.1.0 =
 This update adds more granular control over delay settings and extends maximum duration and delay values. Recommended for all users.
