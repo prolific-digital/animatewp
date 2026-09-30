@@ -1,0 +1,7 @@
+name: Release
+on: { push: { tags: ['v*'] } }
+permissions: { contents: write }
+jobs:
+  release:
+    uses: prolific-digital/.github/.github/workflows/wp-plugin-release.yml@main
+    with: { slug: animatewp }
